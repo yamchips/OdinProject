@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+}
+
+p,
+ul {
+    border: 2px solid rebeccapurple;
+    /* default font size is 16px */
+    padding: 0.2em; 
+}
+
+.block,
+li {
+    border: 2px solid blue;
+    padding: 0.2em;
+}
+
+ul {
+    /* this makes the list in the same line  */
+    display: flex; 
+    /* choose the symbol of each line  */
+    list-style: none;
+}
+
+.block {
+    /* this makes the block class displays like a block */
+    /* span is used for inline styling or JS interaction */
+    display: inline;
+    display: block;
+    /* display: inline-block; */
+}
+
+/* Example Two */
+
+/* this class is inline by default, no line breaks */
+span {
+    border: 2px solid blue;
+}
+
+/* inline-flex creates an inline box containing some flex items 
+   flex only make the list flex, the following paragraphs will start a new line */
+.ul2 {
+    /* display: flex; */
+    display: inline-flex;
+}
+
+.inline {
+    display: inline;
+    /* display: block; */
+}
+
+/* Example 3 */
+p.example3 {
+    background-color: lightblue;
+}
+
+p.example3 span {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid blue;
+    width: 80px;
+    height: 150px;
+    /* background-color: white; */
+}
+
+/* Example 4 */
+p.example4 span {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    width: 80px;
+    height: 50px;
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+
+/* Example 5 */
+nav ul {
+    background-color: lightpink;
+
+}
+
+ul.links-list {
+    background-color: brown;
+}
+
+.links-list a {
+    background-color: rgb(179 57 81);
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+  }
+
+.links-list a:hover {
+    background-color: rgb(66 28 40);
+    color: #fff;
+}

@@ -1,7 +1,14 @@
-h4 {
-    color:blue;
+h1 {
+    text-align: center;
 }
 
-ul li {
-    background-color: green;
+div {
+    background-color:sandybrown ;
+    padding: 8px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+li {
+    margin-bottom: 8px;
 }

@@ -1,7 +1,14 @@
+h1 {
+    text-align: center;
+}
+
+img {
+    margin: auto; 
+    display: block;
+}
+
 h4 {
     color:blue;
 }
 
-ul li {
-    background-color: green;
-}
+

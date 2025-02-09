@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Example 2</title>
+        <link rel="stylesheet" href="style-example2.css">
+    </head>
+    <body>
+        <h1>Flexbox made simple</h1>
+        <section class="cards">
+            <h2>Some cards</h2>
+            <div class="columns">
+                <article class="card">
+                    <h3 class="card__title">Fun stuff</h3>
+                    <p>Repudiandae corporis voluptatibus praesentium sequi.</p>
+                </article>
+                <article class="card">
+                    <h3 class="card__title">Fun stuff</h3>
+                    <p>Repudiandae corporis voluptatibus praesentium sequi.</p>
+                </article>
+                <article class="card">
+                    <h3 class="card__title">An longer title than the others</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, sint. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic autem aut repellendus. Tempore, placeat? Sint repellendus libero blanditiis impedit, temporibus animi ducimus! Ab delectus iste amet! Explicabo voluptas blanditiis dignissimos.</p>
+                </article>
+            </div>
+        </section>
+
+        <h4>Initial status</h4>
+        <p>Add "display:flex;" and "gap: 2rem;" to columns class, we can separate three items but they are of different width.</p>
+        <p>That's because by default, flex-basis is auto, flex will calculate best width for each item. The third item has max length so its auto width is largest.</p>
+        <p>To solve this problem, we need to set flex: 1. That means we set the three parameter to 1 1 0. So, each item is initialized with a width of 0 and expand to same width.</p>
+
+        <h4>flex-direction</h4>
+        <p>Default flex-direction is horizontal, or row. This attribute can be set in containers.</p>
+        <p>Change flex-direction to column. The items are arranged vertically. <strong>Question, now the third item is higher than others even when we set flex to 1 1 0.</strong> Explanation: If we set the height of columns to a larger value, the three items' height is the same. If we don't specify the height, then the flex-basis is auto by default and all three items' height is increasing in same scale but the third item has more content so even previous two stop growing, it still need to increase height until all content is included. </p>
+        <p>When we add a @media code block in css, the flex direction changes according to the web page size. If it's less than the threshold, flex direction is column, otherwise it's row.</p>
+        <h4>Alignment</h4>
+        <p>The default of align-item is stretch. Options are flex-start, flex-end, center, stretch.</p>
+        <p>Align item can be used on single item. Use align-self.</p>
+
+    </body>
+</html>

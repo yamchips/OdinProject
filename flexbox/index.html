@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox made simple</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
+    <body>
+        <h1>Flexbox made simple</h1>
+        <header>
+        <nav>
+            <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Service information goes here</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <h4>min and max content</h4>
+        <ol>
+            <li>Comment "display:flex;"</li>
+            <li>Add "width:max-content" to each list item, each item occupies a new line and the width is the length of its content</li>
+            <li>Change max to min, some items occupy multiple lines so that the width is reduced to its min</li>
+        </ol>
+        <p>By default, flex uses max content.</p>
+        
+        <h4>default behavior of flex</h4>
+        <ol>
+            <li>Delete the min content and uncomment "display:flex;"</li>
+            <li>Now if we shrink the webpage, the third item will wrap first to adapt to smaller container</li>
+            <li>When all items reach their min length (min content), and we continue shrink the window, the items will overflow</li>
+        </ol>
+
+        <h4>flex-shrink</h4>      
+        <p>This property is 1 by default, means it's turned on, so items can shrink when there isn't enough room</p>
+
+        <h4>gap</h4>
+        <p>Add "gap: 1em;" to container, each item will have a gap of 1em with adjacent item.</p>
+
+        <h4>flex-grow</h4>
+        <p>Add "flex-grow: 1;" to item, this code will allocate extra space to each item.</p>
+
+        <h4>flex-wrap</h4>
+        <p>Add "flex-wrap:wrap;" to the container, so when the container is too small, content will wrap so we don't have overflow anymore.</p>
+        <p>We can comment flex-grow and flex-shrink and only use flex-wrap to avoid overflow.</p>
+        
+        <h4>justify-content command</h4>
+        <p>Comment flex-wrap.</p>
+        <p>Justify-content only works when there is extra space.</p>
+        <p>Add "justify-content:center;" to container. Put all items centered. We have flex-start, flex-end, space-between, space-around, space-evenly.If we've already set items to have a flex-grow as 1, then justify-content doesn't work because all extra space are allocated to each item.</p>
+        <p>We can also change main axis direction to column. Then to see justify-content works, we need to set height for the container. The author suggests set a min-height instead of actual height. </p>
+
+    </body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+/* header */
+.header, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F2937;
+}
+
+.logo {
+    margin-left: 32px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    margin: 1em;
+    padding: 0;
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* introduction */
+.introduction {
+    display: flex;
+    padding: 32px;
+    background-color: #1F2937;
+    gap: 16px;
+}
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-left button {
+    align-self: flex-start;
+}
+
+button {
+    background-color: #3882F6;
+    border: 1px solid white;
+    padding: 1em;
+    color: white;
+    border-radius: 10%;
+}
+
+.intro-left .title {
+    font-size: 48px;
+    color: #f9faf8;
+    font-weight: 900;
+    margin: 0;
+}
+
+.intro-left p {
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+/* blocks */
+.blocks {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.blocks p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.four-pic img {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #3882F6;
+    border-radius: 10%;
+}
+
+.four-pic div {
+    max-width: 100px;
+}
+
+.blocks .four-pic {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+/* statement */
+.statement {
+    background-color: #e5e7eb;   
+    padding: 64px;
+}
+
+.statement .text {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 300;
+    color: #1f2937;
+}
+
+.statement .name {
+    text-align: end;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* sign-up */
+.sign-up {
+    padding: 32px;
+}
+
+.sign-up .content {
+    background-color: #3882F6;
+    display: flex;
+    padding: 32px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sign-up-left p {
+    color: #F9FAF8;
+}
+
+.sign-up-left .sign-up-title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.sign-up button {
+    width: 100px;
+    height: 50px;
+}
+
+/* footer */
+.footer {
+    color: #F9FAF8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}

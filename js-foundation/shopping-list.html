@@ -56,6 +56,25 @@
             input.focus();
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('The DOM is fully loaded.');
+        });
+
+        window.addEventListener('load', () => {
+            console.log('The page is fully loaded.');
+        });
+
+        window.addEventListener('beforeunload', () => {
+            // this behavior is guaranteed by modern browsers like Chrome
+            // show the confirmation dialog
+            event.preventDefault();
+            // Google Chrome requires returnValue to be set.
+            event.returnValue = '';
+        });
+
+        window.addEventListener('unload', () => {
+            // modern browsers only alow us to send analytics or save data
+        });
 
 
     </script>

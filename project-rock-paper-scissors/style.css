@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.intro, .title, .buttons, .log {
+    margin: 16px auto;
+}
+
+ul {
+    list-style: none;
+}

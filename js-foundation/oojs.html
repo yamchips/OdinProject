@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What
+            are browser developer tools</a> for more information).</p>
+
+    <script>
+        const person = {
+            name: {
+                first: "Bob",
+                last: "Smith",
+            },
+            age: 32,
+            bio() {
+                console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+            },
+            introduceSelf() {
+                console.log(`Hi! I'm ${this.name[0]}.`);
+            },
+        };
+
+        function Cat(name, breed, color) {
+            this.name = name;
+            this.breed = breed;
+            this.color = color;
+            this.greeting = function () {
+                console.log(`Hello, said ${this.name} the ${this.breed}.`);
+            }
+        }
+        let cat = new Cat('Bertie', 'Cymric', 'white');
+        let cat2 = new Cat('Elfie', 'Aphrodite Giant', 'ginger');
+        console.log(cat.greeting());
+        console.log(cat2.greeting());
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Basics Exercise</title>
+</head>
+
+<body>
+    <script>
+        function camelize(str) {
+            return str.split('-')
+                .filter((item, index) => index > 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item)
+                .join('');
+        }
+        console.log(camelize('background-color'));
+        console.log(camelize('list-style-image'));
+        console.log(camelize('-webkit-transition'));
+
+        function filterRange(arr, a, b) {
+            return arr.filter((item) => item >= a && item <= b);
+        }
+
+        function filterRangeInPlace(arr, a, b) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < a || arr[i] > b) {
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+        // let arr = [5, 3, 8, 1];
+        let arr = [1, 2, 3, 4, 5];
+        filterRangeInPlace(arr, 3, 5);
+        console.log(arr);
+
+        function sortDecrease(arr) {
+            return arr.sort((a, b) => b - a);
+        }
+
+        function copySorted(arr) {
+            let newArr = arr.slice();
+            return newArr.sort((a, b) => a.localeCompare(b));
+        }
+        arr = ["HTML", "JavaScript", "CSS"];
+        console.log('result is: ', copySorted(arr));
+        console.log('arr is: ', arr);
+
+
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 28 };
+
+        let users = [john, pete, mary];
+        let names = users.map(item => item.name);
+        console.log('names is: ', names);
+
+        // map to objects
+        john = { name: "John", surname: "Smith", id: 1 };
+        pete = { name: "Pete", surname: "Hunt", id: 2 };
+        mary = { name: "Mary", surname: "Key", id: 3 };
+
+        users = [john, pete, mary];
+
+        // let usersMapped = users.map(mapObj);
+        let usersMapped = users.map(function (item) {
+            return {
+                fullName: item.name + ' ' + item.surname,
+                id: item.id
+            };
+        });
+        function mapObj(item) {
+            let fullname = item.name + ' ' + item.surname;
+            let newUser = {
+                fullName: fullname,
+                id: item.id,
+            }
+            return newUser;
+        }
+        console.log('userMapped is: ', usersMapped);
+
+        // sort user by age
+        john = { name: "John", age: 25 };
+        pete = { name: "Pete", age: 30 };
+        mary = { name: "Mary", age: 28 };
+
+        arr = [pete, john, mary];
+        function sortByAge(arr) {
+            return arr.sort((a, b) => (a.age - b.age));
+        }
+        sortByAge(arr);
+        console.log('arr is: ', arr);
+
+        // shuffle an array, Fisher-Yates shuffle
+        function shuffle(array) {
+            for (let i = array.length - 1; i >= 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // get average age
+        john = { name: "John", age: 25 };
+        pete = { name: "Pete", age: 30 };
+        mary = { name: "Mary", age: 29 };
+
+        arr = [john, pete, mary];
+        function getAverageAge(arr) {
+            return arr.reduce((sum, i) => sum + i.age, 0) / arr.length;
+        }
+        console.log('avg age is: ', getAverageAge(arr));
+
+        // filter unique array members
+        let strings = ["Hare", "Krishna", "Hare", "Krishna",
+            "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+        function unique(arr) {
+            let unqArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!unqArr.includes(arr[i])) {
+                    unqArr.push(arr[i]);
+                }
+            }
+            return unqArr;
+        }
+        console.log(unique(strings));
+
+        // create keyed object from array
+        users = [
+            { id: 'john', name: "John Smith", age: 20 },
+            { id: 'ann', name: "Ann Smith", age: 24 },
+            { id: 'pete', name: "Pete Peterson", age: 31 },
+        ];
+
+        function groupById(arr) {
+            return arr.reduce((acc, item) => {
+                acc[item.id] = item;
+                return acc;
+            }, {});
+        }
+        function groupById2(arr) {
+            let newArr = {};
+            for (let i = 0; i < arr.length; i++) {
+                newArr[arr[i].id] = arr[i];
+            }
+            // use of 
+            // for (let e of arr) {
+            //     newArr[e.id] = e;
+            // }
+            return newArr;
+        }
+        let usersById = groupById(users);
+        console.log('user by id is: ', usersById);
+
+    </script>
+</body>
+
+</html>

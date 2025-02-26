@@ -1,0 +1,72 @@
+body {
+    font-size: 24px;
+}
+
+.num, .dot {
+    background-color: cadetblue;
+}
+
+.ac, .del, .div, .mul, .sub, .add, .eql {
+    background-color: darkorange;
+}
+
+.container {
+    width: 400px;
+    height: 500px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: slategray;
+}
+
+.container > div {
+    flex: 1;
+    display: flex;
+    margin: 4px 8px;
+}
+
+.container .display {
+    background-color: darkslategrey;
+    margin-top: 8px;
+}
+
+.row1, .row2, .row3 {
+    gap: 5px;
+}
+
+.row1 .left, .row1 .right, .row3 .left, .row3 .right {
+    flex: 1;
+    display: flex;
+}
+
+.row1 .right, .row3 .right {
+    display: flex;
+    gap: 5px;
+}
+
+.row1 .right .del, .row1 .right .div, .row3 .right .dot, .row3 .right .eql {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.row1 .left .ac, .row3 .left .num{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.row2 div, .row3 div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row2 div {
+    flex: 1;
+}
+
+

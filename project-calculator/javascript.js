@@ -40,10 +40,9 @@ function operate(operator, num1, num2) {
 function clickNum() {
     // this function get num1's and num2's value
     if (operator) {
-        // we have an operator        
+        // we have an operator     
+        display.textContent = '';
         if (!num2) {
-            // clear num1 in display 
-            display.textContent = '';
             num2 = +this.textContent;
         } else {
             let curr = +this.textContent;
@@ -52,7 +51,7 @@ function clickNum() {
         updateDisplay(num2);
     } else {
         // no operator
-        if (num1 === 0) {
+        if (num1 === 0 || num1 === result) {
             num1 = +this.textContent;
         } else {
             let curr = +this.textContent;
@@ -68,18 +67,29 @@ function updateDisplay(num) {
     display.textContent = num;
 }
 
-function recordOpe() {
-    // this function record current operator
-    operator = this.textContent;
+function calculate() {
+    if (operator) {
+        result = operate(operator, num1, num2);
+        display.textContent = result;
+        num1 = result;
+        num2 = undefined;
+    } 
+    if (this.textContent !== '=') {
+        operator = this.textContent;
+    } else {
+        operator = undefined;
+    }
 }
 
-function calculate() {
-    const result = operate(operator, num1, num2);
-    display.textContent = result;
+function reset() {
+    num1 = 0;
+    num2 = undefined;
+    operator = undefined;
+    display.textContent = '0';
 }
 
 // constant and variable definition
-let num1 = 0, operator, num2;
+let num1 = 0, operator, num2, result;
 const mulSym = '\u00D7';
 const divSym = '\u00F7';
 const subSym = '\u2212';
@@ -91,12 +101,12 @@ for (let digit of digits) {
     digit.addEventListener('click', clickNum);
 }
 
-// add event listener to all operators except '='
+// add event listener to all operators(+, -, *, /, =)
 const operators = Array.from(document.querySelectorAll('.operator'));
 for (let ope of operators) {
-    ope.addEventListener('click', recordOpe);
+    ope.addEventListener('click', calculate);
 }
 
-// add event listener to symbol '='
-const eql = document.querySelector('.eql');
-eql.addEventListener('click', calculate);
+// add event listener to AC
+const ac = document.querySelector('.ac');
+ac.addEventListener('click', reset);

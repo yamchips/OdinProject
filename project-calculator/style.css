@@ -28,6 +28,11 @@ body {
 .container .display {
     background-color: darkslategrey;
     margin-top: 8px;
+    padding: 8px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .row1, .row2, .row3 {

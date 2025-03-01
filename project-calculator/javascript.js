@@ -81,10 +81,21 @@ function reset() {
 function deleteLast() {
     if (num1 === result) return;
     if (num2) {
-        num2 = +((num2 + '').slice(0, -1));
+        num2 = +(num2.toString().slice(0, -1));
         updateDisplay(num2);
     } else {
-        num1 = +((num1 + '').slice(0, -1));
+        num1 = +(num1.toString().slice(0, -1));
+        updateDisplay(num1);
+    }
+}
+
+function addDot() {
+    if (num1 === result) return;
+    if (num2 && !num2.toString().includes('.')) {
+        num2 += '.';
+        updateDisplay(num2);
+    } else {
+        num1 += '.';
         updateDisplay(num1);
     }
 }
@@ -115,3 +126,7 @@ ac.addEventListener('click', reset);
 // add event listener to Del
 const del = document.querySelector('.del');
 del.addEventListener('click', deleteLast);
+
+// add event listener to dot 
+const dot = document.querySelector('.dot');
+dot.addEventListener('click', addDot);

@@ -27,16 +27,6 @@ function operate(operator, num1, num2) {
     }
 }
 
-// function updateNum(num) {
-//     if (num === 0) {
-//         num = +this.textContent;
-//     } else {
-//         let curr = +this.textContent;
-//         num = +(num + '' + curr);
-//     }
-//     updateDisplay(num);
-// }
-
 function clickNum() {
     // this function get num1's and num2's value
     if (operator) {
@@ -88,6 +78,17 @@ function reset() {
     display.textContent = '0';
 }
 
+function deleteLast() {
+    if (num1 === result) return;
+    if (num2) {
+        num2 = +((num2 + '').slice(0, -1));
+        updateDisplay(num2);
+    } else {
+        num1 = +((num1 + '').slice(0, -1));
+        updateDisplay(num1);
+    }
+}
+
 // constant and variable definition
 let num1 = 0, operator, num2, result;
 const mulSym = '\u00D7';
@@ -110,3 +111,7 @@ for (let ope of operators) {
 // add event listener to AC
 const ac = document.querySelector('.ac');
 ac.addEventListener('click', reset);
+
+// add event listener to Del
+const del = document.querySelector('.del');
+del.addEventListener('click', deleteLast);

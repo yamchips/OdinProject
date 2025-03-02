@@ -88,6 +88,9 @@ function deleteLast() {
         num2 ? num2 = target : num1 = target;
         updateDisplay(target);
     }
+    if (display.textContent === '') {
+        display.textContent = '0';
+    }
 }
 
 function addDot() {

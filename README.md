@@ -9,4 +9,4 @@
 
 [Etch-a-sketch](https://yamchips.github.io/OdinProject/project-etch-a-sketch)
 
-Calculator(in progress)
+[Calculator](https://yamchips.github.io/OdinProject/project-calculator)

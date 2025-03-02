@@ -30,114 +30,89 @@ function operate(operator, num1, num2) {
     }
 }
 
-function clickNum() {
+function clickNum(event) {
     // this function get num1's and num2's value
     if (operator) {
-        // we have an operator     
+        // we have an operator, clear display
         display.textContent = '';
         if (!num2) {
-            num2 = +this.textContent;
+            num2 = event.target.textContent;
         } else {
-            let curr = +this.textContent;
-            num2 = +(num2.toString() + curr);
+            num2 = num2 + event.target.textContent;
         }
         updateDisplay(num2);
     } else {
         // no operator
-        if (num1 === 0 || num1 === result) {
-            num1 = +this.textContent;
+        // second condition: press digit after we have a result 
+        if (num1 === '0' || num1 === result) {
+            num1 = event.target.textContent;
         } else {
-            let curr = +this.textContent;
-            num1 = +(num1.toString() + curr);
+            num1 = num1 + event.target.textContent;
         }
         updateDisplay(num1);
     }
-
 }
 
 function updateDisplay(num) {
-    // this function updates result in display
     display.textContent = num;
 }
 
-function calculate() {
-    if (operator) {
-        result = operate(operator, num1, num2);
+function calculate(event) {
+    // This function calculates result and updates operator
+    // second condition: press operator consecutively
+    if (operator && num2) {
+        result = operate(operator, +num1, +num2).toString();
         display.textContent = result;
         num1 = result;
         num2 = undefined;
     }
-    if (this.textContent !== '=') {
-        operator = this.textContent;
+    if (event.target.textContent !== '=') {
+        operator = event.target.textContent;
     } else {
         operator = undefined;
     }
 }
 
 function reset() {
-    num1 = 0;
+    num1 = '0';
     num2 = undefined;
     operator = undefined;
     display.textContent = '0';
+    result = '';
 }
 
 function deleteLast() {
-    if (num1 === result) return;
-    if (num2) {
-        num2 = +(num2.toString().slice(0, -1));
-        updateDisplay(num2);
-    } else {
-        num1 = +(num1.toString().slice(0, -1));
-        updateDisplay(num1);
+    let target = num2 || num1;
+    if (target) {
+        target = target.slice(0, -1);
+        num2 ? num2 = target : num1 = target;
+        updateDisplay(target);
     }
 }
 
 function addDot() {
-    if (num1 === result) return;
-    if (num2 && !num2.toString().includes('.')) {
-        num2 += '.';
-        updateDisplay(num2);
-    } else if (!num1.toString().includes('.')) {
-        num1 += '.';
-        updateDisplay(num1);
+    let target = num2 || num1;
+    if (!target.includes('.')) {
+        target += '.';
+        num2 ? num2 = target : num1 = target;
+        updateDisplay(target);
     }
 }
 
 function kbInput(event) {
     if (nums.has(event.key)) {
-        if (operator) {
-            // we have an operator     
-            display.textContent = '';
-            if (!num2) {
-                num2 = +event.key;
-            } else {
-                let curr = +event.key;
-                num2 = +(num2.toString() + curr);
+        digits.forEach(div => {
+            if (div.textContent === event.key) {
+                div.click();
             }
-            updateDisplay(num2);
-        } else {
-            // no operator
-            if (num1 === 0 || num1 === result) {
-                num1 = +event.key;
-            } else {
-                let curr = +event.key;
-                num1 = +(num1.toString() + curr);
-            }
-            updateDisplay(num1);
-        }
+        });
     }
     if (opeSymbols.has(event.key)) {
-        if (operator) {
-            result = operate(operator, num1, num2);
-            display.textContent = result;
-            num1 = result;
-            num2 = undefined;
-        }
-        if (event.key !== '=' && event.key !== 'Enter') {
-            operator = event.key;
-        } else {
-            operator = undefined;
-        }
+        operators.forEach(div => {
+            if (div.textContent === symTable[event.key]) {
+                div.click();
+            }
+        });
     }
     if (event.key === '.') {
         addDot();
@@ -152,13 +127,14 @@ function kbDelInput(event) {
 }
 
 // constant and variable definition
-let num1 = 0, operator, num2, result;
+let num1 = '0', operator, num2, result;
 const mulSym = '\u00D7';
 const divSym = '\u00F7';
 const subSym = '\u2212';
 const display = document.querySelector('.display');
 const nums = new Set(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
 const opeSymbols = new Set(['/', '*', '-', '+', '=', 'Enter']);
+const symTable = {'*': mulSym, '/': divSym, '-': subSym, '+': '+', '=': '=', 'Enter': '='};
 
 // add event listener to all digits
 const digits = Array.from(document.querySelectorAll('.num'));

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate HTML and CSS</title>
+</head>
+
+<body>
+    <!-- .wrapper>h1{Title}+.content -->
+    <div id="page">
+        <div class="wrapper">
+            <h1>Title</h1>
+            <div class="content">
+                <p>Hello world!</p>
+            </div>
+        </div>
+    </div>
+
+    <p>second trial</p>
+
+    <!-- nav>ul.nav>li.nav-item$*>a -->
+    <!-- $: creates an increasing sequence 
+         *: the number of items is determined by lines -->
+    <nav>
+        <ul class="nav">
+            <li class="nav-item1">
+                <a href="">About</a>
+            </li>
+            <li class="nav-item2">
+                <a href="">News</a>
+            </li>
+            <li class="nav-item3">
+                <a href="">Products</a>
+            </li>
+            <li class="nav-item4">
+                <a href="">Contacts</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- nav>ul.nav>li.nav-item$*>a|t -->
+    <!-- trim list markers in front of each item -->
+    <ul class="nav">
+        <li class="nav-item1">
+            <a href="">About</a>
+        </li>
+        <li class="nav-item2">
+            <a href="">News</a>
+        </li>
+        <li class="nav-item3">
+            <a href="">Products</a>
+        </li>
+        <li class="nav-item4">
+            <a href="">Contacts</a>
+        </li>
+    </ul>
+
+    <!-- use $# to represent content itself -->
+    <!-- [] attribute, {} text node -->
+    <!--  ul>li[title=$#]*>{$#}+img[alt=$#] -->
+    <ul>
+        <li title="About">
+            About
+            <img src="" alt="About">
+        </li>
+        <li title="News">
+            News
+            <img src="" alt="News">
+        </li>
+        <li title="Products">
+            Products
+            <img src="" alt="Products">
+        </li>
+        <li title="Contacts">
+            Contacts
+            <img src="" alt="Contacts">
+        </li>
+    </ul>
+
+
+</body>
+
+</html>

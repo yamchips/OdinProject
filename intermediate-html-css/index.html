@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intermediate HTML and CSS</title>
+    <link rel="stylesheet" href="">
 </head>
 
 <body>
@@ -78,6 +79,53 @@
             <img src="" alt="Contacts">
         </li>
     </ul>
+
+    <span class="purple"></span>
+    <span id="id"></span>
+    <div class="class-1 class-2" id="id-1"></div>
+    <div class="new-class"></div>
+    <!-- button[type='btn'] -->
+    <button type="btn"></button>
+    <div data-selected=""></div>
+
+    <div class="purple"><span class="cyan"></span></div>
+    <!-- header>nav>ul>li*3{randomText} -->
+    <header>
+        <nav>
+            <ul>
+                <li>randomText</li>
+                <li>randomText</li>
+                <li>randomText</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- header>nav>ul>li*3.class-${List Item $$} -->
+    <header>
+        <nav>
+            <ul>
+                <li class="class-1">List Item 01</li>
+                <li class="class-2">List Item 02</li>
+                <li class="class-3">List Item 03</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- create siblings -->
+    <!-- header+main+footer -->
+    <header></header>
+    <main></main>
+    <footer></footer>
+    <!-- climb up ^, not useful in my case -->
+    <!-- use parenthesis (header>nav)+main+footer -->
+    <header>
+        <nav></nav>
+    </header>
+    <main></main>
+    <footer></footer>
+
+
+    ul>li.item$
 
 
 </body>

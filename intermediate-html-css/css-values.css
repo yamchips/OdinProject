@@ -28,15 +28,17 @@ p {
     font-size: 16px;
 }
 
-h1 + p {
+h1+p {
     font-size: 120%;
 }
 
 /* task 3 */
 .box {
+    width: 300px;
+    height: 300px;
+    border-radius: 0.5em;
+    border: 5px solid rebeccapurple;
     background-image: url(https://mdn.github.io/shared-assets/images/examples/purple-star.png);
     background-repeat: no-repeat;
-    position: center 20%;
-  }
-  
-
+    background-position: center 20%;
+}

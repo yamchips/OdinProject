@@ -1,0 +1,5 @@
+:first-child {
+   border: 1px solid blue;
+}
+
+/* If we use inherited attribute, all elements will be affected. Use non-inherited attributes to see which element is selected. */

@@ -1,10 +1,30 @@
-.parent {}
+.parent {
+    position: relative;
+    height: 200vh;
+}
 
-.child-one {}
+.child-one {
+    /* rarely use */
+    /* 
+    position:relative;
+    top:10px; */
 
-.child-two {}
+    /* position: absolute
+    put child in an absolute position to its parent: set child's position to absolute and parent's to non-static, usually relative. 
+    If its parent is static, it will fall back to a nearest non-static parent, usually html element.*/
+    position: absolute;
+    top: 10px;
 
-.child-three {}
+    /* position: fixed */
+    /* fixed means the element is fixed based on the entire html element */
+    position: fixed;
+
+    /* position: sticky */
+    /* combination of relative and fixed */
+    position: sticky;
+
+}
+
 
 /* default settings */
 .parent {

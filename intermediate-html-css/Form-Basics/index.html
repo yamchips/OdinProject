@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="example.com/path" method="post">
+        <fieldset>
+            <legend>Contact details</legend>
+            <div>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name='first_name' placeholder="harry">
+            </div>
+            <div>
+                <label for="user_email">Email Address:</label>
+                <input type="email" id="user_email" name="email" placeholder="your_email@gmail.com">
+            </div>
+        </fieldset>
+        <div>
+            <label for="user_password">Password:</label>
+            <input type="password" id="user_password" name="password">
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" placeholder="0">
+        </div>
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div>
+            <textarea name="textarea" id="textarea" rows="10" cols="30" placeholder="fill in comments"></textarea>
+        </div>
+        <!-- for and id should be the same, name is necessary, it acts like variable name -->
+        <div>
+            <select name="Car">
+                <option value="mercedes">Mercedes</option>
+                <option value="tesla">Tesla</option>
+                <option value="volvo" selected>Volvo</option>
+                <option value="bmw">BMW</option>
+                <option value="mini">Mini</option>
+                <option value="ford">Ford</option>
+            </select>
+            <select name="fashion">
+                <optgroup label="Clothing">
+                    <option value="t_shirt">T-Shirts</option>
+                    <option value="sweater">Sweaters</option>
+                    <option value="coats">Coats</option>
+                </optgroup>
+                <optgroup label="Foot Wear">
+                    <option value="sneakers">Sneakers</option>
+                    <option value="boots">Boots</option>
+                    <option value="sandals">Sandals</option>
+                </optgroup>
+            </select>
+        </div>
+        <!-- Option elements should have a value attribute, otherwise the text content is used. It will be sent to the server when the form is submitted. -->
+        <fieldset>
+            <legend>Ticket Type</legend>
+            <div>
+                <input type="radio" id="child" name="ticket_type" value="child">
+                <label for="child">Child</label>
+            </div>
+            <div>
+                <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+                <label for="adult">Adult</label>
+            </div>
+            <div>
+                <input type="radio" id="senior" name="ticket_type" value="senior">
+                <label for="senior">Senior</label>
+            </div>
+        </fieldset>
+        <!-- All radio elements share the same name attribute. -->
+        <div>
+            <h3>Pizza Toppings</h3>
+
+            <div>
+                <label for="sausage" class="form-control">
+                    <input type="checkbox" id="sausage" name="topping" value="sausage">
+                    Sausage
+                </label>
+            </div>
+
+            <div>
+                <label for="onions" class="form-control">
+                    <input type="checkbox" id="onions" name="topping" value="onions" checked>
+                    Onions</label>
+            </div>
+
+            <div>
+                <label for="pepperoni" class="form-control">
+                    <input type="checkbox" id="pepperoni" name="topping" value="pepperoni">
+                    Pepperoni</label>
+            </div>
+
+            <div>
+                <label for="mushrooms" class="form-control">
+                    <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+                    Mushrooms</label>
+            </div>
+
+        </div>
+        <!-- All checkbox elements share the same name attribute. -->
+        <div>
+            <input type="checkbox" id="newsletter" name="newsletter" checked>
+            <label for="newsletter">Send me the news letter</label>
+        </div>
+        <div>
+            <!-- Type is submit by default, in a form, non-submit buttons should be assigned with reset or button type specifically. -->
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button">Generic</button>
+
+        </div>
+    </form>
+</body>
+
+</html>

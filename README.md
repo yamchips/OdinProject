@@ -1,7 +1,7 @@
 # Project record
 
 ## Foundation
-[Recipes](https://yamchips.github.io/OdinProject/odin-recipes)
+[Recipes](https://yamchips.github.io/OdinProject/project-odin-recipes)
 
 [Landing page](https://yamchips.github.io/OdinProject/project-landing-page)
 

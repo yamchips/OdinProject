@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Norse';
+    src: url('font/Norse-Bold.woff2') format('woff2'),
+        url('font/Norse-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* left part */
+.left {
+    position: relative;
+    width:400px;
+    height:600px;
+    color: white;
+    background-image: url(img/tree.jpg);
+    background-size: cover;
+    border: 1px solid transparent;
+}
+
+.left img {
+    width: 70px;
+}
+
+.logo {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-name {
+    font-family: 'Norse', sans-serif;
+    font-size: 80px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+}
+
+.credit {
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* right part */

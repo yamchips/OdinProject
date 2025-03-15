@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="left">
         <div class="logo">
@@ -13,9 +15,60 @@
             <div class="logo-name">ODIN</div>
         </div>
         <div class="credit">
-            Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">Unsplash</a>
+            Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on <a
+                href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">Unsplash</a>
         </div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+        <div class="statement">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize
+                your deepest dreams. Sign up <em>now</em> to get started.</p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
+
+        <form action="#" method="get" id="form">
+            <div class="part1">
+                <p>Let's do this!</p>
+                <div class="row">
+                    <div class="cell">
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="cell">
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="cell">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="tel" id="phone" name="phone-number" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        <label for="pwd">PASSWORD</label>
+                        <input type="password" id="pwd" name="pwd" minlength="6">
+                    </div>
+                    <div class="cell">
+                        <label for="pwd-confirm">CONFIRM PASSWORD</label>
+                        <input type="password" id="pwd-confirm" name="pwd-confirm" minlength="6">
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit">Create Account</button>
+            </div>
+        </form>
+
+        <footer id="footer">
+            <p>Already have an account? <span>Log in</span></p>
+        </footer>
+    </div>
 </body>
+
 </html>

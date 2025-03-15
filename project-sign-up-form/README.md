@@ -1,6 +1,6 @@
 # Web page structure 
 
-This sign-up form consists of two parts, I use flex box to adjust the left and right part, setting right part's flex grow to 1. So, if the viewport becomes wider, the left part won't grow but the right part's background color will grow to fit the viewport.
+This sign-up form consists of two parts, I use flex box to adjust the left and right part. Since the requirement doesn't ask us to make the whole page flexible, I center the two parts when the viewport is very wide. 
 
 ## Left part
 
@@ -20,5 +20,10 @@ Set it to flex container to arrange its content.
 
 Set word limit to the paragraphs so they won't grow too long. 
 
-Since the requirement doesn't ask us to make the whole page flexible, I designed the right part so it stick to the left even when the viewport is very wide. 
+# Possible improvement
 
+Use media query to deal with the arrangement in mobile devices.
+
+Define phone number validation.
+
+Make sure input passwords match.

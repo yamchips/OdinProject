@@ -20,3 +20,5 @@ Set it to flex container to arrange its content.
 
 Set word limit to the paragraphs so they won't grow too long. 
 
+Since the requirement doesn't ask us to make the whole page flexible, I designed the right part so it stick to the left even when the viewport is very wide. 
+

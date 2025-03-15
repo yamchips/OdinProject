@@ -124,6 +124,7 @@ form .row {
 }
 
 input {
+    width:100%;
     border-color: #E5E7EB;
     outline: none;
 }

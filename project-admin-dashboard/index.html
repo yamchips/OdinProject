@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <div class="search-icon">
-            <img src="" alt="search-icon">
+        <form action="#" method="get" class="search">
+            <label for="search" aria-label="search">
+                <img src="img/header/magnify.svg" alt="search-icon">
+            </label>
+            <input type="search" id="search" name="search">
+        </form>
+        <div class="right">
+            <img src="img/header/bell.svg" alt="info-icon">
+            <img class="user-icon" src="img/user-icon/user1.png" alt="user-icon">
+            <div class="user-name">
+                Morgan Oakley
+            </div>
         </div>
-        <div class="search-bar">
-            <input type="search">
-        </div>
-        <div class="info">
-            <img src="" alt="info-icon">
-        </div>
-        <div class="user-icon">
-            <img src="" alt="user-icon">
-        </div>
-        <div class="user-name">
-            Morgan Oakley
-        </div>
+
     </header>
 
     <div class="sidebar">
         <div class="dashboard">
-            <img src="img/dashboard.svg" alt="dashboard-icon">
+            <img src="img/sidebar/dashboard.svg" alt="dashboard-icon">
             Dashboard
         </div>
-        
+
         <nav>
-            <div><img src="img/home.svg" alt="home-icon">Home</div>
-            <div><img src="img/profile.svg" alt="profile-icon">Profile</div>
-            <div><img src="img/message.svg" alt="message-icon">Messages</div>
-            <div><img src="img/history.svg" alt="history-icon">History</div>
-            <div><img src="img/task.svg" alt="tasks-icon">Tasks</div>
-            <div><img src="img/communities.svg" alt="communities-icon">Communities</div>
+            <div><img src="img/sidebar/home.svg" alt="home-icon">Home</div>
+            <div><img src="img/sidebar/profile.svg" alt="profile-icon">Profile</div>
+            <div><img src="img/sidebar/message.svg" alt="message-icon">Messages</div>
+            <div><img src="img/sidebar/history.svg" alt="history-icon">History</div>
+            <div><img src="img/sidebar/task.svg" alt="tasks-icon">Tasks</div>
+            <div><img src="img/sidebar/communities.svg" alt="communities-icon">Communities</div>
         </nav>
         <nav>
-            <div><img src="img/settings.svg" alt="settings-icon">Settings</div>
-            <div><img src="img/support.svg" alt="support-icon">Support</div>
-            <div><img src="img/privacy.svg" alt="privacy-icon">Privacy</div>
+            <div><img src="img/sidebar/settings.svg" alt="settings-icon">Settings</div>
+            <div><img src="img/sidebar/support.svg" alt="support-icon">Support</div>
+            <div><img src="img/sidebar/privacy.svg" alt="privacy-icon">Privacy</div>
         </nav>
     </div>
 
     <div class="main">
         <div class="main-header">
-            <img src="" alt="user-icon-large">
+            <img src="img/user-icon/user1.png" alt="user-icon-large">
             <div class="greeting">
                 <div class="hi">Hi there,</div>
                 <div class="user-name">Morgan Oakley (@morgan)</div>
@@ -62,94 +63,119 @@
             <div class="cards">
                 <div class="card">
                     <p>Super Cool Project</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam non minus tenetur quia quos ducimus adipisci laudantium ad suscipit architecto. Qui earum fugiat rerum recusandae atque quidem animi dignissimos esse.</p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam non minus tenetur quia quos
+                        ducimus adipisci laudantium ad suscipit architecto. Qui earum fugiat rerum recusandae atque
+                        quidem animi dignissimos esse.</p>
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
                 <div class="card">
                     <p>Less Cool Project</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam non minus tenetur quia quos ducimus adipisci.</p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam non minus tenetur quia quos
+                        ducimus adipisci.</p>
+                        <img src="img/main/star.svg" alt="star-icon">
+                        <img src="img/main/eye.svg" alt="eye-icon">
+                        <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
                 <div class="card">
                     <p>Impossible App</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, numquam? Nesciunt necessitatibus tempore odit possimus, atque officia impedit, a assumenda magni obcaecati numquam voluptate aut illum nihil excepturi! Error, nisi.</p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Labore, numquam? Nesciunt necessitatibus tempore odit possimus, atque officia
+                        impedit, a assumenda magni obcaecati numquam voluptate aut illum nihil excepturi! Error, nisi.
+                    </p>
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
                 <div class="card">
                     <p>Easy App</p>
                     <p>It's so easy so it's short. </p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
                 <div class="card">
                     <p>Ad blocker</p>
                     <p>All blocked!</p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
                 <div class="card">
                     <p>Money maker</p>
                     <p>No such thing cause we are poor.</p>
-                    <img src="" alt="star-icon">
-                    <img src="" alt="eye-icon">
-                    <img src="" alt="fork-icon">
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
+                </div>
+                <div class="card">
+                    <p>Cat worship</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum adipisci eveniet deserunt dolore recusandae aut, laborum ullam quo ratione ab, provident, quasi odit? Facere natus sequi iure et ab in. Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow.</p>
+                    <img src="img/main/star.svg" alt="star-icon">
+                    <img src="img/main/eye.svg" alt="eye-icon">
+                    <img src="img/main/fork.svg" alt="fork-icon">
                 </div>
             </div>
         </div>
         <div class="announcements">
             <div>Announcements</div>
-            <div>
-                <p>Site Maintenance</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nam ex nulla hic deserunt illo porro expedita dicta cum ullam beatae, totam impedit autem eaque obcaecati doloribus quasi dolore corrupti?</p>
-            </div>
-            <div>
-                <p>Community Share Day</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus perferendis facilis saepe, quibusdam mollitia, aspernatur deserunt fugiat exercitationem, magnam voluptate corrupti neque minus commodi suscipit soluta. Quibusdam, tempora eos?</p>
-            </div>
-            <div>
-                <p>Update Privacy Policy</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius ipsam culpa error voluptas quo facilis magni numquam necessitatibus consequuntur delectus tempore doloribus tempora fugit fuga in, magnam, totam veniam.</p>
+            <div class="content">
+                <div>
+                    <div class="subtitle">Site Maintenance</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nam ex nulla hic deserunt illo
+                        porro expedita dicta cum ullam beatae, totam impedit autem eaque obcaecati doloribus quasi dolore
+                        corrupti?</p>
+                </div>
+                <div>
+                    <div class="subtitle">Community Share Day</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem delectus perferendis facilis saepe,
+                        quibusdam mollitia, aspernatur deserunt fugiat exercitationem, magnam voluptate corrupti neque minus
+                        commodi suscipit soluta. Quibusdam, tempora eos?</p>
+                </div>
+                <div>
+                    <div class="subtitle">Update Privacy Policy</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius ipsam culpa error voluptas quo
+                        facilis magni numquam necessitatibus consequuntur delectus tempore doloribus tempora fugit fuga in,
+                        magnam, totam veniam.</p>
+                </div>
             </div>
         </div>
         <div class="trending">
-            <div class="trending-project">
-                <img src="" alt="user-icon">
-                <div>
-                    <div>@tegan</div>
-                    <div>World Peace Builder</div>
+            <p>Trending</p>
+            <div class="content">
+                <div class="trending-project">
+                    <img src="" alt="user-icon">
+                    <div>
+                        <div>@tegan</div>
+                        <div>World Peace Builder</div>
+                    </div>
                 </div>
-            </div>
-            <div class="trending-project">
-                <img src="" alt="user-icon">
-                <div>
-                    <div>@morgan</div>
-                    <div>Super Cool Project</div>
+                <div class="trending-project">
+                    <img src="" alt="user-icon">
+                    <div>
+                        <div>@morgan</div>
+                        <div>Super Cool Project</div>
+                    </div>
                 </div>
-            </div>
-            <div class="trending-project">
-                <img src="" alt="user-icon">
-                <div>
-                    <div>@kendall</div>
-                    <div>Life Changing App</div>
+                <div class="trending-project">
+                    <img src="" alt="user-icon">
+                    <div>
+                        <div>@kendall</div>
+                        <div>Life Changing App</div>
+                    </div>
                 </div>
-            </div>
-            <div class="trending-project">
-                <img src="" alt="user-icon">
-                <div>
-                    <div>@alex</div>
-                    <div>No Traffic Maker</div>
+                <div class="trending-project">
+                    <img src="" alt="user-icon">
+                    <div>
+                        <div>@alex</div>
+                        <div>No Traffic Maker</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 </body>
+
 </html>

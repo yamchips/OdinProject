@@ -54,7 +54,7 @@ function createCell(value, bookId, isBtn = false, onClick = null) {
     return cell;
 }
 
-// task 4, delete book by id
+// task 5, delete book by id
 function deleteBookById(e) {
     let index = myLibrary.findIndex(book => book.id === e.target.dataset.id);
     if (index !== -1) {
@@ -63,7 +63,7 @@ function deleteBookById(e) {
     displayLib();
 }
 
-// task 5, toggle book read status
+// task 6, toggle book read status
 Book.prototype.toggleRead = function () {
     this.read = !this.read;
 }

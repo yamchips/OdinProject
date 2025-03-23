@@ -37,19 +37,30 @@ for (let head of heads) {
 const tableBody = document.querySelector('.library').querySelector('tbody');
 displayLib();
 
-function createCell(value, isBtn = false, onClick = null) {
+function createCell(value, bookId, isBtn = false, onClick = null) {
     const cell = document.createElement('td');
     if (isBtn) {
-
+        const btn = document.createElement('button');
+        btn.textContent = value;
+        btn.dataset.id = bookId;
+        btn.classList.add(value.toLowerCase());
+        if (onClick) {
+            btn.addEventListener('click', onClick);
+        }
+        cell.appendChild(btn);
     } else {
         cell.textContent = value;
     }
     return cell;
 }
 
-// task 5, delete book by id
-function deleteBookById() {
-
+// task 4, delete book by id
+function deleteBookById(e) {
+    let index = myLibrary.findIndex(book => book.id === e.target.dataset.id);
+    if (index !== -1) {
+        myLibrary.splice(index, 1);
+    }
+    displayLib();
 }
 
 // task 5, toggle book read status
@@ -57,46 +68,21 @@ Book.prototype.toggleRead = function () {
     this.read = !this.read;
 }
 
+function toggleReadStatus(e) {
+    let book = myLibrary.find(book => book.id === e.target.dataset.id);
+    if (book) {
+        book.toggleRead();
+    }
+    displayLib();
+}
+
 function displayLib() {
     tableBody.replaceChildren();
     for (let book of myLibrary) {
         const row = document.createElement('tr');
-        Object.values(book).forEach(value => {
-            const cell = document.createElement('td');
-            cell.textContent = value;
-            row.appendChild(cell);
-        })
-
-        let cell1 = document.createElement('td');
-        const changeStaBtn = document.createElement('button');
-        changeStaBtn.textContent = 'Change';
-        changeStaBtn.dataset.id = book.id;
-        changeStaBtn.classList.add('change');
-        changeStaBtn.addEventListener('click', (e) => {
-            let book = myLibrary.find(book => book.id === e.target.dataset.id);
-            if (book) {
-                book.toggleRead();
-            }
-            displayLib();
-        });
-        cell1.appendChild(changeStaBtn);
-        row.appendChild(cell1);
-
-        let cell2 = document.createElement('td');
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.classList.add('delete');
-        deleteBtn.dataset.id = book.id;
-        deleteBtn.addEventListener('click', (e) => {
-            let index = myLibrary.findIndex(book => book.id === e.target.dataset.id);
-            if (index !== -1) {
-                myLibrary.splice(index, 1);
-            }
-            displayLib();
-        });
-        cell2.appendChild(deleteBtn);
-        row.appendChild(cell2);
-
+        Object.values(book).forEach(value => row.appendChild(createCell(value)));
+        row.appendChild(createCell('Change', book.id, true, (e) => toggleReadStatus(e)));
+        row.appendChild(createCell('Delete', book.id, true, (e) => deleteBookById(e)));
         tableBody.appendChild(row);
     }
 }

@@ -1,10 +1,21 @@
-const age = 100;
+const Formatter = (function (doc) {
+    const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
 
-function go() {
-    const myAge = 200;
-    const hair = 'blonde';
-    console.log(hair);
-    console.log(myAge);
-}
+    const makeUppercase = (text) => {
+        log("Making uppercase");
+        return text.toUpperCase();
+    };
 
-console.log(age);
+    const writeToDOM = (selector, message) => {
+        if (!!doc && "querySelector" in doc) {
+            doc.querySelector(selector).innerHTML = message;
+        }
+    }
+
+    return {
+        makeUppercase,
+        writeToDOM,
+    }
+})(document);
+
+Formatter.writeToDOM("#target", "Hi there");

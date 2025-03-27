@@ -48,6 +48,10 @@ function GameBoard() {
         return false;
     };
 
+    const isTieGame = () => {
+
+    }
+
     return { getBoard, play, printBoard, isGameOver, resetBoard };
 }
 
@@ -72,6 +76,7 @@ function GameController(playerOne = "player one", playerTwo = "player two") {
         { name: playerTwo, token: "O" },
     ];
     let activePlayer = players[0];
+    let moves = 0;
 
     const switchPlayerTurn = () => {
         activePlayer = activePlayer === players[0] ? players[1] : players[0];
@@ -82,6 +87,7 @@ function GameController(playerOne = "player one", playerTwo = "player two") {
     const resetGame = () => {
         board.resetBoard();
         let activePlayer = players[0];
+        moves = 0;
     };
 
     const printNewRound = () => {
@@ -92,8 +98,9 @@ function GameController(playerOne = "player one", playerTwo = "player two") {
     const playRound = (row, col) => {
         console.log(`${getActivePlayer().name} makes a move to (${row}, ${col})`);
         if (board.play(row, col, getActivePlayer().token)) {
-            if (board.isGameOver()) {
-                console.log(`${getActivePlayer().name} wins!`);
+            moves += 1;
+            if (board.isGameOver() || moves === 9) {
+                console.log(board.isGameOver() ? `${getActivePlayer().name} wins!` : 'Tie game!');
                 board.printBoard();
                 console.log('Game will reset.');
                 resetGame();

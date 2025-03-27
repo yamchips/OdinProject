@@ -48,10 +48,6 @@ function GameBoard() {
         return false;
     };
 
-    const isTieGame = () => {
-
-    }
-
     return { getBoard, play, printBoard, isGameOver, resetBoard };
 }
 
@@ -114,9 +110,18 @@ function GameController(playerOne = "player one", playerTwo = "player two") {
         printNewRound();
     };
 
+
+
     printNewRound();
 
-    return { playRound, getActivePlayer };
+
+    return { playRound };
+}
+const game = GameController();
+
+function ScreenController() {
+    const game = GameController();
+
 }
 
-const game = GameController();
+

@@ -1,6 +1,7 @@
 # Project record
 
 ## Foundation
+
 [Recipes](https://yamchips.github.io/OdinProject/project-odin-recipes)
 
 [Landing page](https://yamchips.github.io/OdinProject/project-landing-page)
@@ -20,3 +21,5 @@
 ## Javascript
 
 [Library](https://yamchips.github.io/OdinProject/js-projects/library)
+
+[Tic Tac Toe](https://yamchips.github.io/OdinProject/js-projects/tic-tac-toe)

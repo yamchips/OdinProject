@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+button.start {
+    width: 50px;
+}
+
+div.board {
+    width: 152px;
+    height: 152px;
+    border:1px solid black;
+}
+
+button.cell{
+    width: 50px;  /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    font-size: 24px; /* Ensure consistent text size */
+    text-align: center; /* Center the text */
+    vertical-align: middle;
+    padding: 0; /* Remove padding */
+    border: 1px solid black; /* Keep borders consistent */
+}

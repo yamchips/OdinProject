@@ -48,7 +48,7 @@ function GameBoard() {
         return false;
     };
 
-    return { getBoard, play, printBoard, isGameOver, resetBoard };
+    return { getBoard, play, isGameOver, resetBoard };
 }
 
 function Cell() {
@@ -67,7 +67,7 @@ function Cell() {
 
 function GameController(playerOne = "player one", playerTwo = "player two") {
     const board = GameBoard();
-    const players = [
+    let players = [
         { name: playerOne, token: "X" },
         { name: playerTwo, token: "O" },
     ];
@@ -80,48 +80,109 @@ function GameController(playerOne = "player one", playerTwo = "player two") {
 
     const getActivePlayer = () => activePlayer;
 
-    const resetGame = () => {
+    const resetGame = (playerOne, playerTwo) => {
+        players = [
+            { name: playerOne, token: "X" },
+            { name: playerTwo, token: "O" },
+        ];
         board.resetBoard();
-        let activePlayer = players[0];
+        activePlayer = players[0];
         moves = 0;
     };
 
-    const printNewRound = () => {
-        board.printBoard();
-        console.log(`${getActivePlayer().name}'s turn`);
-    };
-
     const playRound = (row, col) => {
-        console.log(`${getActivePlayer().name} makes a move to (${row}, ${col})`);
+        resultDiv.appendChild(Object.assign(document.createElement('p'), { textContent: `${getActivePlayer().name} makes a move to (${row}, ${col})` }))
         if (board.play(row, col, getActivePlayer().token)) {
             moves += 1;
-            if (board.isGameOver() || moves === 9) {
-                console.log(board.isGameOver() ? `${getActivePlayer().name} wins!` : 'Tie game!');
-                board.printBoard();
-                console.log('Game will reset.');
-                resetGame();
+            if (isGameOver()) {
+                resultDiv.appendChild(Object.assign(document.createElement('p'), { textContent: board.isGameOver() ? `${getActivePlayer().name} wins!` : 'Tie game!' }))
+                return false;
             } else {
                 switchPlayerTurn();
+                return true;
             }
         } else {
-            console.log("invalid move!");
+            resultDiv.appendChild(Object.assign(document.createElement('p'), { textContent: 'Invalid move!' }))
+            return true;
         }
-
-        printNewRound();
     };
 
+    const isGameOver = () => {
+        return board.isGameOver() || moves === 9;
+    }
 
-
-    printNewRound();
-
-
-    return { playRound };
+    return { playRound, getBoard: board.getBoard, getActivePlayer, resetGame, isGameOver };
 }
-const game = GameController();
 
 function ScreenController() {
-    const game = GameController();
+    const inputOne = document.querySelector('#playerOne').value;
+    const playerOne = (inputOne === '') ? 'player one' : inputOne;
+    const inputTwo = document.querySelector('#playerTwo').value;
+    const playerTwo = (inputTwo === '') ? 'player two' : inputTwo;
 
+    const game = GameController(playerOne, playerTwo);
+    const board = game.getBoard();
+    const turnDiv = document.querySelector('.turn');
+    const boardDiv = document.querySelector('.board');
+
+
+    const initializeScreen = () => {
+        boardDiv.textContent = '';
+
+        const activePlayer = game.getActivePlayer();
+
+        turnDiv.textContent = `${activePlayer.name}'s turn`
+        resultDiv.textContent = '';
+
+        for (let i = 0; i < 3; i++) {
+            const row = document.createElement('div');
+            row.dataset.row = i;
+            for (let j = 0; j < 3; j++) {
+                const cellBtn = document.createElement('button');
+                cellBtn.classList.add('cell');
+                cellBtn.dataset.row = i;
+                cellBtn.dataset.col = j;
+                cellBtn.textContent = board[i][j].getValue();
+                row.appendChild(cellBtn);
+            }
+            boardDiv.appendChild(row);
+        }
+    }
+
+    function handleClick(e) {
+        const row = e.target.dataset.row;
+        const col = e.target.dataset.col;
+        if (game.isGameOver()) {
+            return alert('game over, please start a new game');
+        }
+        game.playRound(row, col);
+        updateScreen(row, col);
+
+    }
+
+    function updateScreen(row, col) {
+        const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+        if (cell) {
+            cell.textContent = board[row][col].getValue();
+        }
+    }
+
+    function start() {
+        const inputOne = document.querySelector('#playerOne').value;
+        const playerOne = (inputOne === '') ? 'player one' : inputOne;
+        const inputTwo = document.querySelector('#playerTwo').value;
+        const playerTwo = (inputTwo === '') ? 'player two' : inputTwo;
+        game.resetGame(playerOne, playerTwo);
+        initializeScreen();
+        turnDiv.textContent = `${game.getActivePlayer().name}'s turn`;
+        resultDiv.textContent = '';
+    }
+
+    boardDiv.addEventListener('click', handleClick);
+    const startBtn = document.querySelector('.start')
+    startBtn.addEventListener('click', () => start());
+    initializeScreen();
 }
 
-
+const resultDiv = document.querySelector('.result');
+ScreenController();

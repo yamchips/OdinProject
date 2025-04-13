@@ -23,3 +23,5 @@
 [Library](https://yamchips.github.io/OdinProject/js-projects/library)
 
 [Tic Tac Toe](https://yamchips.github.io/OdinProject/js-projects/tic-tac-toe)
+
+[Restaurant Page](https://yamchips.github.io/restaurant-page/)

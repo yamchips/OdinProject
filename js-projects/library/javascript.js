@@ -95,7 +95,6 @@ function displayLib() {
 // task 4, add new book
 const addNewBookBtn = document.querySelector('.add-new-book');
 const bookDialog = document.querySelector('.newBook');
-const submitBtn = document.querySelector('.submit');
 const newTitle = document.querySelector('#title');
 const newAuthor = document.querySelector('#author');
 const newPages = document.querySelector('#pages');
@@ -110,7 +109,10 @@ addNewBookBtn.addEventListener('click', () => {
 
 // submit button create a Book instance
 let newBook = null;
-submitBtn.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
+    if (!form.checkValidity()) {
+        return;
+    }
     e.preventDefault();
     newBook = new Book(newTitle.value, newAuthor.value, newPages.value, newRead.checked);
     bookDialog.close();
@@ -123,3 +125,6 @@ bookDialog.addEventListener('close', () => {
         displayLib();
     }
 });
+
+// Validation
+

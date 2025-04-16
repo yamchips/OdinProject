@@ -109,6 +109,8 @@ addNewBookBtn.addEventListener('click', () => {
 
 // submit button create a Book instance
 let newBook = null;
+
+// Validation
 form.addEventListener('submit', (e) => {
     if (!form.checkValidity()) {
         return;
@@ -126,5 +128,5 @@ bookDialog.addEventListener('close', () => {
     }
 });
 
-// Validation
+
 

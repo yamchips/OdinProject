@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+div.container {
+
+
+  border: 1px solid red;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+label {
+  text-align: right;
+}
+
+div.btn {
+  grid-column:  1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

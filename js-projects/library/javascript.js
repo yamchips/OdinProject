@@ -100,6 +100,13 @@ const newAuthor = document.querySelector('#author');
 const newPages = document.querySelector('#pages');
 const newRead = document.querySelector('#read');
 const form = bookDialog.querySelector('form');
+const cancelBtn = document.querySelector('dialog .cancel')
+
+// close the dialog
+cancelBtn.addEventListener('click', () => {
+    form.reset();
+    bookDialog.close();
+})
 
 // open the dialog modally
 addNewBookBtn.addEventListener('click', () => {

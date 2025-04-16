@@ -34,11 +34,9 @@ form button {
     width: 100px;
 }
 
-form button[value='cancel'] {
+form button.cancel {
     justify-self: end;
 }
-
-#checkbox {}
 
 /* table format */
 

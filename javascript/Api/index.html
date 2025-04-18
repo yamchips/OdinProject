@@ -28,7 +28,16 @@
       function search(text) {
         fetch(url + text)
           .then((response) => response.json())
-          .then((response) => (img.src = response.data.images.original.url));
+          .then((response) => {
+            if (response.data) {
+              img.src = response.data.images.original.url;
+            } else {
+              img.src = "./placeholder.webp";
+            }
+          })
+          .catch((error) => {
+            img.src = "./placeholder.webp";
+          });
       }
     </script>
   </body>

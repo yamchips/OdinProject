@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetching data from API</title>
+  </head>
+  <body>
+    <form>
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="search" />
+      <button>Go</button>
+    </form>
+    <img alt="cat" />
+    <script>
+      const img = document.querySelector("img");
+      const form = document.querySelector("form");
+      const searchBox = document.querySelector("input");
+      const url =
+        "https://api.giphy.com/v1/gifs/translate?api_key=Rik4fZwp27vXZWGXrqhoFfhtQytex99i&s=";
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const searchContext = searchBox.value;
+        search(searchContext);
+      });
+
+      function search(text) {
+        fetch(url + text)
+          .then((response) => response.json())
+          .then((response) => (img.src = response.data.images.original.url));
+      }
+    </script>
+  </body>
+</html>
